@@ -22,10 +22,14 @@ function fetchJobsList(){
 function fetchUserInfo(username){//username= id(path의 id)
      return axios.get(`${config.baseUrl}user/${username}.json`)
 }
+function fetchCommentItem(id){//username= id(path의 id)
+    return axios.get(`${config.baseUrl}item/${id}.json`)
+}
 
 export {
     fetchNewsList,
     fetchAskList,
     fetchJobsList,
-    fetchUserInfo
+    fetchUserInfo,
+    fetchCommentItem
 }
