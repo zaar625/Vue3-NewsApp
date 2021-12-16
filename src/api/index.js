@@ -19,9 +19,13 @@ function fetchAskList(){
 function fetchJobsList(){
     return axios.get(`${config.baseUrl}jobs/1.json`)
 }
+function fetchUserInfo(username){//username= id(path의 id)
+     return axios.get(`${config.baseUrl}user/${username}.json`)
+}
 
 export {
     fetchNewsList,
     fetchAskList,
-    fetchJobsList
+    fetchJobsList,
+    fetchUserInfo
 }
