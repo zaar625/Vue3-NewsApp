@@ -14,13 +14,12 @@
           </a>
         </p>
         <small class="link-text">
-          by 
-          <router-link class="link-text" router-link v-bind:to="`/user/${item.user}`">{{item.user}}</router-link>  
+          {{ item.time_ago}}by 
+          <router-link class="link-text" v-bind:to="`/user/${item.user}`">{{item.user}}</router-link>  
         </small>
       </div>
     </li>
   </ul>
-  
 </div>
 </template>
 
