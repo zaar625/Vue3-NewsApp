@@ -32,8 +32,12 @@ export default {
     }
   },
   created(){
-    bus.$on('start:spinner',() => this.startSpinner);
-    bus.$on('end:spinner',() => this.endSpinner);
+    bus.$on('start:spinner',() => {
+      console.log(this.loadingStatus)
+      this.startSpinner()
+      console.log(this.loadingStatus)
+      });//이벤트 받기
+    bus.$on('end:spinner',() => this.endSpinner());
   },
   beforeDestroy(){
     bus.$off('start:spinner',() => this.startSpinner);
