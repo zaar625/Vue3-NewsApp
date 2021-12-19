@@ -2,7 +2,7 @@
   <div id="app">
     <tool-bar></tool-bar>
     <transition name="page">
-    <router-view></router-view>
+      <router-view></router-view>
     </transition>
   </div>
 </template>

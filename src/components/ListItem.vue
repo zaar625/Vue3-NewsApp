@@ -43,7 +43,7 @@ export default {
         if(name === 'news'){
             this.$store.dispatch('FECH_NEWS');
         }else if(name === 'ask'){
-            this.$store.dispatch('FECH_ASK');
+            this.$store.dispatch('FETCH_ASK');
         }else if(name === 'jobs'){
             this.$store.dispatch('FECH_JOBS');
         }

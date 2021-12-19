@@ -20,11 +20,10 @@ export default{
             console.log(error);
         })
     },
-    FECH_ASK({commit}){
+    FETCH_ASK(context){
         fetchAskList()
-        .then(({data})=>{
-            console.log(data);
-            commit('SET_ASK', data)
+        .then(response=>{
+            context.commit('SET_ASK', response.data)
         })
         .catch(error=>{
             console.log(error);

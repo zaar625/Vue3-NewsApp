@@ -1,8 +1,12 @@
 <template>
   <div>
+    <user-profile :info="fetchedItem">
+      <div slot="username">{{fetchedItem.user}}</div>
+      <template slot="time">{{fetchedItem.time_ago}}</template>
+    </user-profile>
     <section>
-      <!-- 질문 상세 정보 -->
-      <div class="user-container">
+      <!-- 사용자 정보 -->
+      <!-- <div class="user-container">
         <div>
          <i class="fas fa-user"></i>
         </div>
@@ -14,8 +18,10 @@
             {{fetchedItem.time_ago}}
           </div>
         </div>
-      </div>
-      <h2>{{fetchedItem.title}}</h2>
+      </div> -->
+    </section>
+    <section>
+        <h2>{{fetchedItem.title}}</h2>
     </section>
     <section>
       <!-- 질문 댓글 -->
@@ -34,9 +40,12 @@
 // <script>
 // import axios from 'axios'
 import {mapGetters} from 'vuex' 
+import UserProfile from '../components/UserProfile.vue'
 
 export default {
-
+  components: {
+    UserProfile,
+  },
   computed:{
     ...mapGetters(['fetchedItem'])
   },
