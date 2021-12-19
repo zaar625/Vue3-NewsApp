@@ -8,6 +8,9 @@
 import ListItem from '../components/ListItem.vue';
 
 export default {
+  created(){
+    this.$store.dispatch('FECH_JOBS');
+  },
   components: { ListItem ,
   },
 }
