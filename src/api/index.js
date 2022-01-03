@@ -20,7 +20,7 @@ function fetchJobsList(){
     return axios.get(`${config.baseUrl}jobs/1.json`)
 }
 function fetchUserInfo(username){//username= id(path의 id)
-     return axios.get(`${config.baseUrl}user/${username}.json`)
+    return axios.get(`${config.baseUrl}user/${username}.json`)
 }
 function fetchCommentItem(id){//username= id(path의 id)
     return axios.get(`${config.baseUrl}item/${id}.json`)

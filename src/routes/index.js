@@ -5,6 +5,8 @@ import NewsView from '../views/NewsView.vue'
 import JobsView from '../views/JobsView.vue'
 import AskView from '../views/AskView.vue'
 import ItemView from '../views/ItemView.vue';
+import bus from '../utils/bus'
+import {store} from '../store/index'
 // import createListView from '../views/CreateListView'
 
 Vue.use(VueRouter);
@@ -22,6 +24,24 @@ export const router = new VueRouter({
         name:'news',
         component:NewsView,
         // component: createListView('NewsView'),
+        beforeEnter:(to, from, next) =>{
+          bus.$emit('start:spinner');//이벤트 보내기
+          setTimeout(()=>{
+          store.dispatch('FETCH_LIST',store.name)
+          .then(()=>{
+          console.log(5)
+          console.log('fetched');
+          bus.$emit('end:spinner');
+          next();
+          })
+          .catch((error)=>{
+            console.log(error)
+          });
+      }, 3000)
+          // console.log('to',to)
+          // console.log('from',from)
+          // console.log('next',next)
+        }
     },
     {
       path:'/ask',
